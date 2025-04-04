@@ -1,3 +1,24 @@
+// Thêm đoạn code này vào đầu file tokoside.js
+(function() {
+    // Lưu lại hàm gốc
+    var originalFn = window.angkaToRp || function(){};
+    
+    // Ghi đè hàm
+    window.angkaToRp = function(amount) {
+        if(isNaN(amount)) return '0 VNĐ';
+        return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ' VNĐ';
+    };
+    
+    // Ghi đè cả console log nếu cần
+    console.log = function() {
+        var args = Array.prototype.slice.call(arguments);
+        args = args.map(function(arg) {
+            return typeof arg === 'string' ? arg.replace(/Rp/g, 'VNĐ') : arg;
+        });
+        originalConsoleLog.apply(console, args);
+    };
+})();
+
 /* Blanter Tokoside v2.0 | GLOBAL SCRIPT | (c) 2020-2021 Dunia Blanter | idblanter.com */
 (function (_0xd5e8de, _0x2530e2) {
     var _0x3bd381 = function (_0x1eccae) {
