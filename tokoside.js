@@ -79,16 +79,14 @@ document[_0x46a1[0x2]](_0x46a1[0x1])[_0x46a1[0x0]] = localStorage[_0x46a1[0x4]](
 var select1 = $(_0x46a1[0xc])[_0x46a1[0x7]](),
     select2 = $(_0x46a1[0xd])[_0x46a1[0x7]]();
 
-function angkaToVND(amount) {
-    amount = amount.toString().replace(/\D/g, "").split("").reverse().join("");
-    var formatted = "";
-    for (var i = 0; i < amount.length; i++) {
-        if (i % 3 == 0 && i != 0) {
-            formatted += ".";
-        }
-        formatted += amount[i];
+function angkaToRp(_0x37aaa5) {
+    _0x37aaa5 = _0x37aaa5.toString().replace(/\D/g, "").split("").reverse().join("");
+    var _0xfb7666 = "";
+    for (var _0x42a302 = 0; _0x42a302 < _0x37aaa5.length; _0x42a302++) {
+        _0x42a302 % 3 == 0 && _0x42a302 != 0 && (_0xfb7666 += ".");
+        _0xfb7666 += _0x37aaa5[_0x42a302];
     }
-    return formatted.split("").reverse().join("") + " VNĐ";
+    return _0xfb7666.split("").reverse().join("") + " VNĐ";
 }
 var getproduct, cart_pages = $(_0x46a1[0x16])[_0x46a1[0x7]]();
 
